@@ -4,7 +4,6 @@ import (
 	"crypto/rand"
 	"errors"
 	"fmt"
-	"gym-back/database"
 	"gym-back/models"
 	"gym-back/repositories"
 	"time"
@@ -31,7 +30,6 @@ func CreateUser(user *models.User) (*models.User, error) {
 
 // CreateToken creates an auth_token
 func CreateToken(username string, password string) (*models.AuthToken, error) {
-	db := database.GetConnection()
 	user := repositories.FindUserByUsername(username)
 
 	err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(password))
@@ -43,7 +41,7 @@ func CreateToken(username string, password string) (*models.AuthToken, error) {
 	token.Token = generateTokenString()
 	token.User = *user
 	token.ExpiresAt = time.Now().Add(72 * time.Hour)
-	db.Create(&token)
+	repositories.CreateAuthToken(token)
 	return token, nil
 }
 

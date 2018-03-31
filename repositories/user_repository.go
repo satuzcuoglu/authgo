@@ -34,3 +34,11 @@ func FindUserByUsername(username string) *models.User {
 	db.Where("username = ?", username).First(&user)
 	return user
 }
+
+// FindUserByEmail finds user by email and returns it
+func FindUserByEmail(email string) *models.User {
+	db := database.GetConnection()
+	user := new(models.User)
+	db.Where("email = ?", email).First(&user)
+	return user
+}

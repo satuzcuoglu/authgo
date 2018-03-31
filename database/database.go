@@ -1,6 +1,9 @@
 package database
 
 import (
+	"fmt"
+	"gym-back/config"
+
 	"github.com/jinzhu/gorm"
 
 	// Postgresql Dialect
@@ -10,7 +13,11 @@ import (
 var db *gorm.DB
 
 func createConnection() *gorm.DB {
-	db, err := gorm.Open("postgres", "host=localhost port=5432 dbname=gymsub_dev user=gymsub password=gymsub sslmode=disable")
+	conf := config.GetConfig()
+	connectionString :=
+		fmt.Sprintf("host=%s port=%v dbname=%s user=%s password=%s sslmode=disable",
+			conf.DBHost, conf.DBPort, conf.DBName, conf.DBUsername, conf.DBPassword)
+	db, err := gorm.Open("postgres", connectionString)
 	if err != nil {
 		panic(err)
 	}

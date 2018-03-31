@@ -5,7 +5,6 @@ import (
 )
 
 func autoMigrateDatabases() {
-	db.DropTableIfExists(models.User{}, models.AuthToken{})
+	// db.DropTableIfExists(models.User{}, models.AuthToken{})
 	db.AutoMigrate(models.User{}, models.AuthToken{})
-
 }

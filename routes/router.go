@@ -1,32 +1,30 @@
 package routes
 
 import (
+	"gym-back/config"
 	"gym-back/controllers"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
 
 // InitRoutes initializes all routes for app
 func InitRoutes() {
+	conf := config.GetConfig()
 	router := gin.Default()
 	router.Use(CORSMiddleware())
-	router.POST("/auth/register", controllers.Register)
-	router.POST("/auth/login", controllers.Login)
-	router.Run(":7000")
-}
 
-func CORSMiddleware() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
-		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
-		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
-		c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT")
-
-		if c.Request.Method == "OPTIONS" {
-			c.AbortWithStatus(204)
-			return
-		}
-
-		c.Next()
+	auth := router.Group("/auth")
+	{
+		auth.POST("/register", controllers.Register)
+		auth.POST("/login", controllers.Login)
 	}
+
+	apiRoutes := router.Group("/api")
+	apiRoutes.Use(AuthMiddleware())
+	{
+		apiRoutes.GET("/user", controllers.User)
+	}
+
+	router.Run(":" + strconv.Itoa(conf.Port))
 }

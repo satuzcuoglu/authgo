@@ -3,28 +3,50 @@ package test
 import (
 	"testing"
 
+	"github.com/icrowley/fake"
+
 	"gym-back/models"
 	"gym-back/repositories"
 )
 
+var (
+	userID    uint
+	userName  = fake.UserName()
+	email     = fake.EmailAddress()
+	firstName = fake.FirstName()
+	lastName  = fake.LastName()
+	password  = fake.SimplePassword()
+)
+
 func TestCreateUser(t *testing.T) {
 	user := new(models.User)
-	user.Username = "john"
-	user.Firstname = "John"
-	user.Lastname = "Doe"
-	user.Password = "test123"
-	user.Email = "john.doe@test.com"
+	user.Username = userName
+	user.Firstname = firstName
+	user.Lastname = lastName
+	user.Password = password
+	user.Email = email
 	repositories.CreateUser(user)
-
-	if user.ID != 1 {
-		t.Error("Expected 1, got ", user.ID)
-	}
+	userID = user.ID
 }
 
 func TestFindUserByID(t *testing.T) {
-	user := repositories.FindUserByID(1)
-	if user.ID != 1 {
-		t.Error("Expected 1, got ", user.ID)
+	user := repositories.FindUserByID(userID)
+	if user.ID != userID {
+		t.Error("user ID's doesnt match , got ", user.ID)
+	}
+}
+
+func TestFindUserByUsername(t *testing.T) {
+	user := repositories.FindUserByUsername(userName)
+	if user == nil {
+		t.Error("User cannot found via username", userName)
+	}
+}
+
+func TestFindUserByEmail(t *testing.T) {
+	user := repositories.FindUserByEmail(email)
+	if user == nil {
+		t.Error("User cannot found via email", email)
 	}
 }
 

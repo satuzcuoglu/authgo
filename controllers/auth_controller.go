@@ -41,6 +41,14 @@ func Login(c *gin.Context) {
 	}
 }
 
+func User(c *gin.Context) {
+	contextUser, exists := c.Get("user")
+	if !exists {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "Unauthorized"})
+	}
+	c.JSON(http.StatusOK, contextUser)
+}
+
 type loginCredentials struct {
 	Username string `json:"username"`
 	Password string `json:"password"`

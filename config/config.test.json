@@ -1,0 +1,7 @@
+{
+	"Port": "8080",
+	"DBName": "gymsub_test",
+	"DBPort": "5432",
+	"DbUsername": "gymsub",
+	"DBPassword": "gymsub"
+}

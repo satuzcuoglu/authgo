@@ -31,7 +31,7 @@ func DeleteUser(user *models.User) *models.User {
 func FindUserByUsername(username string) *models.User {
 	db := database.GetConnection()
 	user := new(models.User)
-	db.Where("username = ?", username).First(&user)
+	db.Unscoped().Where("username = ?", username).First(&user)
 	return user
 }
 
@@ -39,6 +39,6 @@ func FindUserByUsername(username string) *models.User {
 func FindUserByEmail(email string) *models.User {
 	db := database.GetConnection()
 	user := new(models.User)
-	db.Where("email = ?", email).First(&user)
+	db.Unscoped().Where("email = ?", email).First(&user)
 	return user
 }

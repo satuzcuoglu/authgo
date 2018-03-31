@@ -33,13 +33,13 @@ func CreateUser(user *models.User) (*models.User, error) {
 func CreateToken(username string, password string) (*models.AuthToken, error) {
 	db := database.GetConnection()
 	user := repositories.FindUserByUsername(username)
-	token := new(models.AuthToken)
 
 	err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(password))
 	if err != nil {
 		return nil, err
 	}
 
+	token := new(models.AuthToken)
 	token.Token = generateTokenString()
 	token.User = *user
 	token.ExpiresAt = time.Now().Add(72 * time.Hour)

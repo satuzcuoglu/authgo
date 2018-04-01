@@ -5,6 +5,9 @@ import (
 )
 
 func autoMigrateDatabases() {
-	// db.DropTableIfExists(models.User{}, models.AuthToken{})
-	db.AutoMigrate(models.User{}, models.AuthToken{})
+	userAuthority := new(models.Authority)
+	userAuthority.Name = "ROLE_USER"
+	db.AutoMigrate(models.User{}, models.AuthToken{}, models.Authority{})
+	db.Create(userAuthority)
+
 }

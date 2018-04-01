@@ -16,14 +16,16 @@ func CreateUser(user *models.User) *models.User {
 func FindUserByID(id uint) *models.User {
 	db := database.GetConnection()
 	user := new(models.User)
-	db.Where("id = ?", id).First(&user)
+	db.Preload("Authorities").Where("id = ?", id).First(&user)
 	return user
 }
 
 // DeleteUser deletes an user
 func DeleteUser(user *models.User) *models.User {
 	db := database.GetConnection()
-	db.Delete(&user)
+	if user.Email != "" && user.Username != "" {
+		db.Delete(&user)
+	}
 	return user
 }
 
@@ -31,7 +33,7 @@ func DeleteUser(user *models.User) *models.User {
 func FindUserByUsername(username string) *models.User {
 	db := database.GetConnection()
 	user := new(models.User)
-	db.Unscoped().Where("username = ?", username).First(&user)
+	db.Unscoped().Preload("Authorities").Where("username = ?", username).First(&user)
 	return user
 }
 
@@ -39,6 +41,6 @@ func FindUserByUsername(username string) *models.User {
 func FindUserByEmail(email string) *models.User {
 	db := database.GetConnection()
 	user := new(models.User)
-	db.Unscoped().Where("email = ?", email).First(&user)
+	db.Unscoped().Preload("Authorities").Where("email = ?", email).First(&user)
 	return user
 }

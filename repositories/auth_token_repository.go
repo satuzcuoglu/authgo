@@ -23,6 +23,6 @@ func DeleteAuthToken(token string) {
 func FindAuthTokenByToken(token string) *models.AuthToken {
 	db := database.GetConnection()
 	authToken := new(models.AuthToken)
-	db.Preload("User").Where("token = ? and expires_at > ?", token, time.Now()).First(&authToken)
+	db.Preload("User").Preload("User.Authorities").Where("token = ? and expires_at > ?", token, time.Now()).First(&authToken)
 	return authToken
 }

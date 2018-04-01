@@ -14,6 +14,8 @@ import (
 // CreateUser creates an user with hashed password
 func CreateUser(user *models.User) (*models.User, error) {
 	userByUsername := repositories.FindUserByUsername(user.Username)
+	userAuthority := repositories.FindAuthorityByName("ROLE_USER")
+
 	if userByUsername.Username != "" {
 		return nil, errors.New("Username Already Taken")
 	}
@@ -24,6 +26,7 @@ func CreateUser(user *models.User) (*models.User, error) {
 	}
 
 	user.Password = generateHashedPassword(user.Password)
+	user.Authorities = append(user.Authorities, *userAuthority)
 	repositories.CreateUser(user)
 	return user, nil
 }

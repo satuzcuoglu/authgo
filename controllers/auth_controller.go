@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"gym-back/models"
+	"gym-back/repositories"
 	"gym-back/services"
 
 	"github.com/gin-gonic/gin"
@@ -41,6 +42,14 @@ func Login(c *gin.Context) {
 	}
 }
 
+// Logout deletes provided auth token from server
+func Logout(c *gin.Context) {
+	tokenString := c.GetHeader("Token")
+	repositories.DeleteAuthToken(tokenString)
+	c.Status(http.StatusOK)
+}
+
+// User returns owner of the token
 func User(c *gin.Context) {
 	contextUser, exists := c.Get("user")
 	if !exists {

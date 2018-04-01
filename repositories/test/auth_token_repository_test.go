@@ -36,8 +36,8 @@ func TestCreateAuthToken(t *testing.T) {
 	}
 }
 
-func TestFindUserByToken(t *testing.T) {
-	authToken := repositories.FindUserByToken(token)
+func TestFindAuthTokenByToken(t *testing.T) {
+	authToken := repositories.FindAuthTokenByToken(token)
 	userInfo := &authToken.User
 	if userInfo == nil {
 		t.Error("Token doesnt have user info")

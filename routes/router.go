@@ -18,6 +18,7 @@ func InitRoutes() {
 	{
 		auth.POST("/register", controllers.Register)
 		auth.POST("/login", controllers.Login)
+		auth.GET("/logout", controllers.Logout)
 	}
 
 	apiRoutes := router.Group("/api")

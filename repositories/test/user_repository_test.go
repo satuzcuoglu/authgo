@@ -5,8 +5,8 @@ import (
 
 	"github.com/icrowley/fake"
 
-	"gym-back/models"
-	"gym-back/repositories"
+	"go-auth/models"
+	"go-auth/repositories"
 )
 
 var (

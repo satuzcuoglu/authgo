@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"gym-back/config"
-	"gym-back/controllers"
+	"go-auth/config"
+	"go-auth/controllers"
 	"strconv"
 
 	"github.com/gin-gonic/gin"

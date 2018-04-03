@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"gym-back/repositories"
+	"go-auth/repositories"
 
 	"github.com/gin-gonic/gin"
 )

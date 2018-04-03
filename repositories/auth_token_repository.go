@@ -1,8 +1,8 @@
 package repositories
 
 import (
-	"gym-back/database"
-	"gym-back/models"
+	"go-auth/database"
+	"go-auth/models"
 	"time"
 )
 

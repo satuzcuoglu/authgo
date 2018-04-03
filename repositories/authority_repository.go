@@ -1,9 +1,9 @@
 package repositories
 
 import (
-	"gym-back/database"
+	"go-auth/database"
 
-	"gym-back/models"
+	"go-auth/models"
 )
 
 // FindAuthorityByName returns an authority

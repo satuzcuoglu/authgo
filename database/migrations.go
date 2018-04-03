@@ -1,7 +1,7 @@
 package database
 
 import (
-	"gym-back/models"
+	"go-auth/models"
 )
 
 func autoMigrateDatabases() {

@@ -3,9 +3,9 @@ package controllers
 import (
 	"net/http"
 
-	"gym-back/models"
-	"gym-back/repositories"
-	"gym-back/services"
+	"go-auth/models"
+	"go-auth/repositories"
+	"go-auth/services"
 
 	"github.com/gin-gonic/gin"
 )

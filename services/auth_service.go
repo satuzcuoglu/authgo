@@ -4,8 +4,8 @@ import (
 	"crypto/rand"
 	"errors"
 	"fmt"
-	"gym-back/models"
-	"gym-back/repositories"
+	"go-auth/models"
+	"go-auth/repositories"
 	"time"
 
 	"golang.org/x/crypto/bcrypt"

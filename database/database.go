@@ -2,7 +2,7 @@ package database
 
 import (
 	"fmt"
-	"gym-back/config"
+	"go-auth/config"
 
 	"github.com/jinzhu/gorm"
 

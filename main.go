@@ -1,8 +1,8 @@
 package main
 
 import (
-	"gym-back/database"
-	"gym-back/routes"
+	"go-auth/database"
+	"go-auth/routes"
 )
 
 func main() {

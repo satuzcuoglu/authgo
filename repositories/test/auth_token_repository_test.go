@@ -1,8 +1,8 @@
 package test
 
 import (
-	"gym-back/models"
-	"gym-back/repositories"
+	"go-auth/models"
+	"go-auth/repositories"
 	"testing"
 	"time"
 

@@ -19,12 +19,7 @@ func InitRoutes() {
 		auth.POST("/register", controllers.Register)
 		auth.POST("/login", controllers.Login)
 		auth.GET("/logout", controllers.Logout)
-	}
-
-	apiRoutes := router.Group("/api")
-	apiRoutes.Use(AuthMiddleware())
-	{
-		apiRoutes.GET("/user", controllers.User)
+		auth.Use(AuthMiddleware()).GET("/me", controllers.User)
 	}
 
 	router.Run(":" + strconv.Itoa(conf.Port))

@@ -2,7 +2,7 @@
 	"Port": 8080,
 	"DBHost": "localhost",
 	"DBPort": 5432,
-	"DBName": "gymsub_dev",	
-	"DbUsername": "gymsub",
-	"DBPassword": "gymsub"
+	"DBName": "auth_dev",	
+	"DbUsername": "auth",
+	"DBPassword": "auth"
 }

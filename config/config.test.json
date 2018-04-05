@@ -1,7 +1,8 @@
 {
-	"Port": "8080",
-	"DBName": "gymsub_test",
-	"DBPort": "5432",
-	"DbUsername": "gymsub",
-	"DBPassword": "gymsub"
+	"Port": 8080,
+	"DBHost": "localhost",
+	"DBPort": 5432,
+	"DBName": "auth_test",
+	"DbUsername": "auth",
+	"DBPassword": "auth"
 }

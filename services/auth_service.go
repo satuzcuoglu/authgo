@@ -1,11 +1,11 @@
 package services
 
 import (
+	"authgo/models"
+	"authgo/repositories"
 	"crypto/rand"
 	"errors"
 	"fmt"
-	"go-auth/models"
-	"go-auth/repositories"
 	"time"
 
 	"golang.org/x/crypto/bcrypt"

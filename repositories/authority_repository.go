@@ -1,9 +1,9 @@
 package repositories
 
 import (
-	"go-auth/database"
+	"authgo/database"
 
-	"go-auth/models"
+	"authgo/models"
 )
 
 // FindAuthorityByName returns an authority

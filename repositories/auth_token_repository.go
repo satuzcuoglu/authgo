@@ -1,8 +1,8 @@
 package repositories
 
 import (
-	"go-auth/database"
-	"go-auth/models"
+	"authgo/database"
+	"authgo/models"
 	"time"
 )
 

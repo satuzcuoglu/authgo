@@ -1,8 +1,8 @@
 package main
 
 import (
-	"go-auth/database"
-	"go-auth/routes"
+	"authgo/database"
+	"authgo/routes"
 )
 
 func main() {

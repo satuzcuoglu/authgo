@@ -3,9 +3,9 @@ package controllers
 import (
 	"net/http"
 
-	"go-auth/models"
-	"go-auth/repositories"
-	"go-auth/services"
+	"authgo/models"
+	"authgo/repositories"
+	"authgo/services"
 
 	"github.com/gin-gonic/gin"
 )

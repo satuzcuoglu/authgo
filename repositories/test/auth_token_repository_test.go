@@ -1,8 +1,8 @@
 package test
 
 import (
-	"go-auth/models"
-	"go-auth/repositories"
+	"authgo/models"
+	"authgo/repositories"
 	"testing"
 	"time"
 

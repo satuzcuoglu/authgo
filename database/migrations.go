@@ -1,7 +1,7 @@
 package database
 
 import (
-	"go-auth/models"
+	"authgo/models"
 )
 
 func autoMigrateDatabases() {

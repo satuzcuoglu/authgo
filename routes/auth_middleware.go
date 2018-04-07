@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"go-auth/repositories"
+	"authgo/repositories"
 
 	"github.com/gin-gonic/gin"
 )

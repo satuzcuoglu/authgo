@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"go-auth/config"
-	"go-auth/controllers"
+	"authgo/config"
+	"authgo/controllers"
 	"strconv"
 
 	"github.com/gin-gonic/gin"

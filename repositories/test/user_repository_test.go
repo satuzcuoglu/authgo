@@ -5,8 +5,8 @@ import (
 
 	"github.com/icrowley/fake"
 
-	"go-auth/models"
-	"go-auth/repositories"
+	"authgo/models"
+	"authgo/repositories"
 )
 
 var (

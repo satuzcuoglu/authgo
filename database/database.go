@@ -1,8 +1,8 @@
 package database
 
 import (
+	"authgo/config"
 	"fmt"
-	"go-auth/config"
 
 	"github.com/jinzhu/gorm"
 

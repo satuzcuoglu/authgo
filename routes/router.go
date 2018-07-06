@@ -1,9 +1,10 @@
 package routes
 
 import (
-	"authgo/config"
-	"authgo/controllers"
 	"strconv"
+
+	"github.com/satuzcuoglu/authgo/config"
+	"github.com/satuzcuoglu/authgo/controllers"
 
 	"github.com/gin-gonic/gin"
 )

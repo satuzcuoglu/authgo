@@ -1,12 +1,13 @@
 package services
 
 import (
-	"authgo/models"
-	"authgo/repositories"
 	"crypto/rand"
 	"errors"
 	"fmt"
 	"time"
+
+	"github.com/satuzcuoglu/authgo/models"
+	"github.com/satuzcuoglu/authgo/repositories"
 
 	"golang.org/x/crypto/bcrypt"
 )
@@ -34,6 +35,10 @@ func CreateUser(user *models.User) (*models.User, error) {
 // CreateToken creates an auth_token
 func CreateToken(username string, password string) (*models.AuthToken, error) {
 	user := repositories.FindUserByUsername(username)
+
+	if user.Username == "" {
+		return nil, errors.New("Username Already Taken")
+	}
 
 	err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(password))
 	if err != nil {

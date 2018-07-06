@@ -1,8 +1,9 @@
 package database
 
 import (
-	"authgo/config"
 	"fmt"
+
+	"github.com/satuzcuoglu/authgo/config"
 
 	"github.com/jinzhu/gorm"
 

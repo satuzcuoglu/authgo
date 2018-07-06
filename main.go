@@ -1,8 +1,8 @@
 package main
 
 import (
-	"authgo/database"
-	"authgo/routes"
+	"github.com/satuzcuoglu/authgo/database"
+	"github.com/satuzcuoglu/authgo/routes"
 )
 
 func main() {

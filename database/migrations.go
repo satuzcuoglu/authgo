@@ -1,7 +1,7 @@
 package database
 
 import (
-	"authgo/models"
+	"github.com/satuzcuoglu/authgo/models"
 )
 
 func autoMigrateDatabases() {

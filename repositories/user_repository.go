@@ -1,8 +1,8 @@
 package repositories
 
 import (
-	"authgo/database"
-	"authgo/models"
+	"github.com/satuzcuoglu/authgo/database"
+	"github.com/satuzcuoglu/authgo/models"
 )
 
 // CreateUser creates an user and returns 201

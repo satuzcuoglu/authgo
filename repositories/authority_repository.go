@@ -1,9 +1,9 @@
 package repositories
 
 import (
-	"authgo/database"
+	"github.com/satuzcuoglu/authgo/database"
 
-	"authgo/models"
+	"github.com/satuzcuoglu/authgo/models"
 )
 
 // FindAuthorityByName returns an authority

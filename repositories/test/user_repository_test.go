@@ -5,8 +5,8 @@ import (
 
 	"github.com/icrowley/fake"
 
-	"authgo/models"
-	"authgo/repositories"
+	"github.com/satuzcuoglu/authgo/models"
+	"github.com/satuzcuoglu/authgo/repositories"
 )
 
 var (

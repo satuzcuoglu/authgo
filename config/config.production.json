@@ -1,6 +1,6 @@
 {
 	"Port": 8080,
-	"DBHost": "localhost",
+	"DBHost": "127.0.0.1",
 	"DBPort": 5432,
 	"DBName": "auth",
 	"DbUsername": "auth",

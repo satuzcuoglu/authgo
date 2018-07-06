@@ -1,9 +1,10 @@
 package repositories
 
 import (
-	"authgo/database"
-	"authgo/models"
 	"time"
+
+	"github.com/satuzcuoglu/authgo/database"
+	"github.com/satuzcuoglu/authgo/models"
 )
 
 // CreateAuthToken generates and token for an user

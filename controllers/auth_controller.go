@@ -3,9 +3,9 @@ package controllers
 import (
 	"net/http"
 
-	"authgo/models"
-	"authgo/repositories"
-	"authgo/services"
+	"github.com/satuzcuoglu/authgo/models"
+	"github.com/satuzcuoglu/authgo/repositories"
+	"github.com/satuzcuoglu/authgo/services"
 
 	"github.com/gin-gonic/gin"
 )

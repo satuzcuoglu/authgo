@@ -22,7 +22,7 @@ func GetConfig() Config {
 		env = "development"
 	}
 
-	file, err := os.Open(os.Getenv("GOPATH") + "/src/authgo/config/config." + env + ".json")
+	file, err := os.Open(os.Getenv("GOPATH") + "/src/github.com/satuzcuoglu/authgo/config/config." + env + ".json")
 	if err != nil {
 		panic(err)
 	}

@@ -1,10 +1,11 @@
 package test
 
 import (
-	"authgo/models"
-	"authgo/repositories"
 	"testing"
 	"time"
+
+	"github.com/satuzcuoglu/authgo/models"
+	"github.com/satuzcuoglu/authgo/repositories"
 
 	"github.com/icrowley/fake"
 )

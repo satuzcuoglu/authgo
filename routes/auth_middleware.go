@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"authgo/repositories"
+	"github.com/satuzcuoglu/authgo/repositories"
 
 	"github.com/gin-gonic/gin"
 )
